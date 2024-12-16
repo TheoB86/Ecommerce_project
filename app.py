@@ -50,8 +50,8 @@ def create_checkout_session():
                 'quantity': 1,
             }],
             mode='payment',
-            success_url='http://127.0.0.1:5000/success',
-            cancel_url='http://127.0.0.1:5000/cancel',
+            success_url='http://127.0.0.1:10000/success',
+            cancel_url='http://127.0.0.1:10000/cancel',
         )
         return jsonify({'id': session.id})
     except Exception as e:
@@ -70,4 +70,8 @@ def cancel():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=10000)
+{
+  "product_id": 1,
+  "price": 100
+}
